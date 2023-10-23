@@ -1,23 +1,23 @@
 def main():
-    # Ask the user for the number of inputs they wish to enter
     N = int(input("Enter a positive integer N: "))
 
-    # Ensure that the number entered is positive
+    # Number has to be positive
     while N <= 0:
         N = int(input("Please enter a positive integer N: "))
 
     # Read the N numbers from the user
     numbers = []
     for i in range(N):
-        num = int(input(f"Enter number {i + 1}: "))
+        num = int(input(f"Number {i + 1}: "))
         numbers.append(num)
 
-    # Ask the user for the number X to search for
-    X = int(input("Enter an integer X: "))
+    X = int(input("Please enter an integer X: "))
 
-    # Check if X is in the list of numbers and print the result
-    if X in numbers:
-        print(f"The index of {X} is {numbers.index(X) + 1}")
+    # Get all indices for the input number
+    indices = [i + 1 for i, num in enumerate(numbers) if num == X]
+
+    if len(indices) > 0:
+        print(indices)
     else:
         print("-1")
 
